@@ -53,3 +53,5 @@ theme_done\icons
 4.若想制作其他模块，请至tools\全局主题标准资源包 目录拷贝相应模块至lewa_tmp目录
 
 5.若所有模块修改完成，便可以进行打包主题了
+
+注意：打包前，一定要修改theme_done目录下description.xml的描述信息(推荐使用notepad++)。
