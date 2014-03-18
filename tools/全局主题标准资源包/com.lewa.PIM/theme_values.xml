@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<LEWA_Theme_Values>
+    <color name="dialpad_under_button_bg">#fff8463c</color>
+    <color name="dialpad_bg">#fff8463c</color>
+    <color name="dialpad_separator_bg">#ffe7291d</color>
+    <color name="digits_edit_text_color">#fffffc00</color>
+    <color name="mms_compose_recipient_bg">#ffd4011b</color>
+    <color name="mms_btn_select_color">#ffbf001e</color>
+    <color name="contact_detail_photo_bg">#ffd4011b</color>
+    <color name="start_color">#ffeb2442</color>
+    <color name="end_color">#ffc0001f</color>
+</LEWA_Theme_Values>
+

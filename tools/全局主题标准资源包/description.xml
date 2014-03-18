@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LEWA_Theme>
+    
+    <versionCode>2</versionCode>
+    <versionName>1.0</versionName>
+    <packageName>com.lewa.newyear</packageName>
+    
+    <nameList>
+         <language>zh</language>
+         <name>红包到</name>
+         <author>乐蛙</author>
+    </nameList>
+    
+     <nameList>
+         <language>en</language>
+         <name>Happy new year</name>
+         <author>Lewa</author>
+    </nameList>  
+        
+</LEWA_Theme>

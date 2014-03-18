@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<LEWA_Theme>
+    
+    <versionCode>2</versionCode>
+    <versionName>5.0</versionName>
+    <packageName>com.lewa.自定义名称【唯一】</packageName>
+    
+    <nameList>
+         <language>zh</language>
+         <name>主题名称自定义</name>
+         <author>格子铺</author>
+    </nameList>
+    
+     <nameList>
+         <language>en</language>
+         <name>主题名称自定义【英文】</name>
+         <author>gezipu</author>
+    </nameList>  
+        
+</LEWA_Theme>

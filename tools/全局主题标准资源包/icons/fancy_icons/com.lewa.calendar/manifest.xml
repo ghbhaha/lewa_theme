@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- calendar -->
+<Icon version="1" frameRate="0" width="128" height="128" screenWidth="720" useVariableUpdater="DateTime.Hour">
+    <!-- <Var name="offset" expression="#date_n_sec.bmp_width+#date_n_fir.bmp_width"/>
+    <Var name="date_len" expression="len(#date)"/> -->
+    <Image x="64" y="64" align="center" alignV="center" src="calendar_bg.png"/>
+    <DateTime name="week" x="64" y="18" align="center" alignV="center" format="EEEE" size="20" color="#FFFFFFFF"/>
+    <ImageNumber x="64" y="36" align="center" alignV="top" src="calendar.png" number="#date"/>
+
+   <!--  <Group x="64-#offset/2">
+        <Image name="date_n_sec" x="0" y="36" align="left" alignV="top" src="calendar.png" srcid="digit(#date,2)" visibility="eq(#date_len,2)"/>
+        <Image name="date_n_fir" x="#date_n_sec.bmp_width" y="36" align="left" alignV="top" src="calendar.png" srcid="digit(#date,1)" />
+    </Group> -->
+    
+</Icon>

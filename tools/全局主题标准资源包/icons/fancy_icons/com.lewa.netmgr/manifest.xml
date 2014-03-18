@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Icon version="1" frameRate="0" width="128" height="128" screenWidth="720" useVariableUpdater="none">
+	<!--数据流量-->
+	<VariableBinders>
+		<ContentProviderBinder name="dataflow" uri="content://com.lewa.netmgr/info" columns="limit,used" countName="level_count" notifyUri="content://com.lewa.netmgr/info">
+			<Variable name="df_limit" type="string" column="limit" row="0"/>
+			<Variable name="df_used" type="string" column="used" row="0"/>
+		</ContentProviderBinder>
+	</VariableBinders>
+	
+	<Var name="dfused" expression="ifelse(gt(@df_used,@df_limit),@df_limit,@df_used)"/>
+	<Var name="varUsedPercent" expression="ifelse(gt(@df_limit,-1),int(#dfused*100/@df_limit),0)"/>
+	<!--Var name="varUsedPercent" expression="200"/-->
+	<Var name="dfUsedPercent" expression="ifelse(gt(#varUsedPercent,999),999,#varUsedPercent)"/>
+	<Group name="df" x="0" y="0">
+		<Image x="0" y="0" src="defbg.png" visibility="lt(@df_limit,0)"/>
+		<Group visibility="ge(@df_limit,0) * lt(#dfUsedPercent,85)">
+			<Image x="64" y="64" align="center" alignV="center" src="bg.png"/>
+			<Image x="0" y="0" src="ring_level_left.png">
+				<Mask x="0" y="0" src="ring_level_mask.png" w="64" h="128" centerX="64" centerY="64" angle="max(#dfUsedPercent-50,0)/50*180"/>
+			</Image>
+			<Image x="64" y="0" src="ring_level_right.png">
+				<Mask x="0" y="0" src="ring_level_mask.png" w="64" h="128" centerX="0" centerY="64" angle="min(#dfUsedPercent,50)/50*180"/>
+			</Image>
+			<ImageNumber x="64" y="58" align="center" alignV="center" number="#dfUsedPercent" src="nums/num.png"/>
+			<Image x="64" y="82" align="center" alignV="center" src="percent.png"/>
+			<Image x="0" y="0" src="hightlight.png"/>
+		</Group>
+		<Group visibility="ge(@df_limit,0) * ge(#dfUsedPercent,85)">
+			<Image x="64" y="64" align="center" alignV="center" src="bg_red.png"/>
+			<Image x="0" y="0" src="ring_level_left_red.png">
+				<Mask x="0" y="0" src="ring_level_mask.png" w="64" h="128" centerX="64" centerY="64" angle="min(max(#dfUsedPercent-50,0), 50)/50*180"/>
+			</Image>
+			<Image x="64" y="0" src="ring_level_right_red.png">
+				<Mask x="0" y="0" src="ring_level_mask.png" w="64" h="128" centerX="0" centerY="64" angle="min(#dfUsedPercent,50)/50*180"/>
+			</Image>
+			<ImageNumber x="64" y="58" align="center" alignV="center" number="#dfUsedPercent" src="nums/num.png"/>
+			<Image x="64" y="82" align="center" alignV="center" src="percent.png"/>
+			<Image x="0" y="0" src="hightlight.png"/>
+		</Group>
+		
+	</Group>
+</Icon>

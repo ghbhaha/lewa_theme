@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<LEWA_Theme_Values>
+    <color name="tab_text_bright_foreground_holo_light">#ffe68810</color>
+    <color name="tab_text_bright_foreground_disabled_holo_light">#ffe68810</color>
+    <color name="tab_text_highlight_holo_light">#fffffc00</color>
+    <color name="tab_text_focused_holo_light">#fffffc00</color>
+    <color name="activity_title_text_color_holo_light">#fffffc00</color>
+    <color name="dialog_title_text_color_holo_light">#ff553838</color>
+    <color name="compact_menu_item_text_color_normal_holo_light">#ff553838</color>
+    <color name="compact_menu_item_text_color_focused_holo_light">#fffffc00</color>
+    <color name="actionmode_title_text_color_holo_light">#fffffc00</color>
+</LEWA_Theme_Values>

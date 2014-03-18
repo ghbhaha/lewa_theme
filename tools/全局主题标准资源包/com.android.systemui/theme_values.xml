@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<LEWA_Theme_Values>
+    <color name="systemuiPrimaryColor">#FFFFFFFF</color>
+    <color name="switch_text_holo_blue_light">#FFfffc00</color>
+    <color name="switch_text_black_color">#FFe68810</color>
+    <color name="dividerColor">#FFffec94</color>
+</LEWA_Theme_Values>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Icon version="1" frameRate="0" screenWidth="720" width="128" height="128" useVariableUpdater="none">
+	<VariableBinders>
+		<ContentProviderBinder columns="_id" countName="unread_mess_count" uri="content://sms/inbox" where="type=1 AND read=0" notifyUri="content://mms-sms"/>
+	</VariableBinders>
+	<FramerateController visibility="gt(#unread_mess_count,0)" loop="true">
+	  <ControlPoint time="0" frameRate="38"/>
+	  <ControlPoint time="40" frameRate="38"/>
+	</FramerateController>
+	<Image src="01.png" visibility="eq(#unread_mess_count,0)"/>
+	<Image src="01.png" visibility="gt(#unread_mess_count,0)">
+		<SourcesAnimation>
+			<Source x="0" y="0" src="01.png" time="0"/>
+			<Source x="0" y="0" src="02.png" time="25"/>
+			<Source x="0" y="0" src="03.png" time="50"/>
+			<Source x="0" y="0" src="04.png" time="75"/>
+			<Source x="0" y="0" src="05.png" time="100"/>
+			<Source x="0" y="0" src="06.png" time="125"/>
+			<Source x="0" y="0" src="07.png" time="150"/>
+			<Source x="0" y="0" src="08.png" time="175"/>
+			<Source x="0" y="0" src="09.png" time="200"/>
+			<Source x="0" y="0" src="10.png" time="225"/>
+			<Source x="0" y="0" src="11.png" time="250"/>
+			<Source x="0" y="0" src="12.png" time="275"/>
+			<Source x="0" y="0" src="13.png" time="300"/>
+			<Source x="0" y="0" src="14.png" time="325"/>
+			<Source x="0" y="0" src="15.png" time="350"/>
+			<Source x="0" y="0" src="16.png" time="375"/>
+			<Source x="0" y="0" src="17.png" time="400"/>
+			<Source x="0" y="0" src="18.png" time="425"/>
+			<Source x="0" y="0" src="19.png" time="450"/>
+			<Source x="0" y="0" src="20.png" time="475"/>
+			<Source x="0" y="0" src="21.png" time="500"/>
+			<Source x="0" y="0" src="22.png" time="525"/>
+			<Source x="0" y="0" src="23.png" time="550"/>
+			<Source x="0" y="0" src="24.png" time="575"/>
+			<Source x="0" y="0" src="25.png" time="600"/>
+			<Source x="0" y="0" src="26.png" time="625"/>
+			<Source x="0" y="0" src="27.png" time="650"/>
+			<Source x="0" y="0" src="28.png" time="675"/>
+			<Source x="0" y="0" src="29.png" time="700"/>
+			<Source x="0" y="0" src="30.png" time="725"/>
+			<Source x="0" y="0" src="31.png" time="750"/>
+			<Source x="0" y="0" src="32.png" time="775"/>
+			<Source x="0" y="0" src="33.png" time="800"/>
+			<Source x="0" y="0" src="34.png" time="825"/>
+			<Source x="0" y="0" src="35.png" time="850"/>
+			<Source x="0" y="0" src="36.png" time="875"/>
+			<Source x="0" y="0" src="37.png" time="900"/>
+			<Source x="0" y="0" src="38.png" time="925"/>
+			<Source x="0" y="0" src="01.png" time="950"/>
+			<Source x="0" y="0" src="01.png" time="5000"/>
+		</SourcesAnimation>
+	</Image>
+</Icon>

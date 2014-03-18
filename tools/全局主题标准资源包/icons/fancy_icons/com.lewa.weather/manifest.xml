@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- weather -->
+<Icon version="1" frameRate="0" width="136" height="136" screenWidth="720" useVariableUpdater="none">
+	<VariableBinders>
+		<ContentProviderBinder columns="temperature,sort" countName="hasWeather" uri="content://com.lewa.weather" notifyUri="content://com.lewa.weather">
+			<Variable name="weather_temperature" column="temperature" type="string"/>
+			<Variable name="weather_type" column="sort" type="string"/>
+		</ContentProviderBinder>
+	</VariableBinders>
+	<Var name="icon_index" expression="ifelse(eq(@weather_type,18),3,eq(@weather_type,19),5, @weather_type)"/>
+	<Image x="64" y="64" align="center" alignV="center" srcExp="'weather/weather_'+ #icon_index + '.png'"/>
+	<!--温度-->
+	<Var name="degree" expression="replace(@weather_temperature,'℃','')" type="string"/>
+	<Var name="weather_temp_len" expression="len(abs(@degree))"/>
+	<Group visibility="#hasWeather" name="temp">
+		<ImageNumber name="degree_num_1" x="104-4" y="8" align="right" alignV="top" src="weather/tem.png" number="@degree" visibility="#hasWeather"/>
+		<Image name="degree_c" x="124-4" y="8" align="right" src="weather/degree.png" visibility="#hasWeather"/>
+	</Group>
+</Icon>
