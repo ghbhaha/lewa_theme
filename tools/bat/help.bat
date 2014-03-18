@@ -6,6 +6,10 @@
 cls
 echo.
 echo 更新说明
+echo.
+echo 2014.3.18
+echo 1.添加tools\资料(制作主题的工具及参考资料)
+echo.
 echo 2014.3.17
 echo LEWA主题制作[移植]助手V2.1
 echo 1.增加目录的主题判断，支持多个主题的选择
