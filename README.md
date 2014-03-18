@@ -22,6 +22,8 @@ LEWA主题制作[移植]助手V2.1
 
 4.修复com.android.systemui.bat中的路径错误问题
 
+5.准备文件添加解包乐蛙主题lwt
+
 2014.3.14 
 
 LEWA主题制作[移植]助手V2.0Beta
