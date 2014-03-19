@@ -73,6 +73,7 @@ ren com.android.phone.png com.lewa.phone.png
 ren com.android.providers.contacts.CallLogProvider.png com.lewa.phone.png 
 ren com.android.contacts.activities.TwelveKeyDialer.png com.lewa.phone.png 
 
+ren com.android.providers.downloads.ui.png com.lewa.download.png
 ren com.android.providers.downloads.png com.lewa.download.png
 ren com.android.settings.png com.lewa.settings.png
 ren com.android.soundrecorder.png com.lewa.soundrecorder.png
@@ -86,7 +87,7 @@ ren com.android.music.png com.lewa.music.png
 ren com.android.quicksearchbox.png com.lewa.search.png
 :百度搜索
 ren com.baidu.searchbox.png com.lewa.search.png
-ren com.ijinshan.kbatterydoctor.png com.lewa.battery.png
+copy com.ijinshan.kbatterydoctor.png com.lewa.battery.png
 :应用商店
 ren com.xiaomi.shop.png com.lewa.store.png
 ren com.miui.supermarket.png com.lewa.store.png
