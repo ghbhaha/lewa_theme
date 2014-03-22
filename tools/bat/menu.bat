@@ -16,13 +16,14 @@ echo   2.icons移植/解包/打包
 echo   3.lockscreen解包/打包			
 echo   4.framework-res解包/打包		
 echo   5.lewa-res解包/打包
-echo   6.com.android.systemui解包/打包
-echo   7.com.lewa.birdview解包/打包
-echo   8.com.lewa.launcher5解包/打包		
-echo   9.com.android.settings解包/打包
-echo   10.打包主题
-echo   11.查看说明
-echo   12.adb推送主题 
+echo   6.com.lewa.PIM解包/打包
+echo   7.com.android.systemui解包/打包
+echo   8.com.lewa.birdview解包/打包
+echo   9.com.lewa.launcher5解包/打包		
+echo   10.com.android.settings解包/打包
+echo   11.打包主题
+echo   12.查看说明
+echo   13.adb推送主题 
 echo   0.退出程序
 echo. 
 echo --------------------------------------------------------
@@ -36,13 +37,14 @@ if /i "%choice%"=="2" tools\bat\icons
 if /i "%choice%"=="3" tools\bat\lockscreen
 if /i "%choice%"=="4" tools\bat\framework-res
 if /i "%choice%"=="5" tools\bat\lewa-res
-if /i "%choice%"=="6" tools\bat\com.android.systemui
-if /i "%choice%"=="7" tools\bat\com.lewa.birdview
-if /i "%choice%"=="8" tools\bat\com.lewa.launcher5
-if /i "%choice%"=="9" tools\bat\com.android.settings
-if /i "%choice%"=="10" goto make_*.lwt
-if /i "%choice%"=="11" tools\bat\help
-if /i "%choice%"=="12" goto adb
+if /i "%choice%"=="6" tools\bat\com.lewa.PIM
+if /i "%choice%"=="7" tools\bat\com.android.systemui
+if /i "%choice%"=="8" tools\bat\com.lewa.birdview
+if /i "%choice%"=="9" tools\bat\com.lewa.launcher5
+if /i "%choice%"=="10" tools\bat\com.android.settings
+if /i "%choice%"=="11" goto make_*.lwt
+if /i "%choice%"=="12" tools\bat\help
+if /i "%choice%"=="13" goto adb
 echo 选择无效，请重新输入
 ping 127.0.0.1 -n 2 >NUL
 echo.
