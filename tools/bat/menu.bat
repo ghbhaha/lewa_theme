@@ -1,3 +1,7 @@
+@echo off
+set /p folder=<"tools\theme_inf\theme_name_z.txt"
+set /p theme_name_e=<"tools\theme_inf\theme_name_e.txt"
+
 ::************************************************************
 :主菜单部分
 ::************************************************************
@@ -5,46 +9,51 @@
 cls
 @echo ********************************************************
 @echo.
-@echo                    LEWA主题制作[移植]助手
+@echo               LEWA主题制作[移植]助手%version%
 @echo.
 @echo.
 @echo ********************************************************
+echo --------------------------------------------------------
 echo.  [选择序号进行操作]
 echo --------------------------------------------------------
-echo   1.准备文件				
-echo   2.icons移植/解包/打包		
-echo   3.lockscreen解包/打包			
-echo   4.framework-res解包/打包		
-echo   5.lewa-res解包/打包
-echo   6.com.lewa.PIM解包/打包
-echo   7.com.android.systemui解包/打包
-echo   8.com.lewa.birdview解包/打包
-echo   9.com.lewa.launcher5解包/打包		
-echo   10.com.android.settings解包/打包
-echo   11.打包主题
-echo   12.查看说明
-echo   13.adb推送主题 
+echo   1.准备文件
+echo   2.修改主题信息			
+echo   3.icons移植/解包/打包		
+echo   4.lockscreen解包/打包			
+echo   5.framework-res解包/打包		
+echo   6.lewa-res解包/打包
+echo   7.com.lewa.PIM解包/打包
+echo   8.com.android.systemui解包/打包
+echo   9.com.lewa.birdview解包/打包
+echo   10.com.lewa.launcher5解包/打包		
+echo   11.com.android.settings解包/打包主题
+echo   12.高级设置
+echo   13.打包主题
+echo   14.查看说明
+echo   15.adb推送主题(不支持中文名) 
 echo   0.退出程序
 echo. 
 echo --------------------------------------------------------
 echo.                            %date% %time%
 set choice=
-set /p choice= 选择[0-12]操作:
+set /p choice= 选择[0-15]操作:
 IF NOT "%choice%"=="" SET choice=%choice:~0,2%
 if /i "%choice%"=="0" EXIT
 if /i "%choice%"=="1" goto make_tmp
-if /i "%choice%"=="2" tools\bat\icons
-if /i "%choice%"=="3" tools\bat\lockscreen
-if /i "%choice%"=="4" tools\bat\framework-res
-if /i "%choice%"=="5" tools\bat\lewa-res
-if /i "%choice%"=="6" tools\bat\com.lewa.PIM
-if /i "%choice%"=="7" tools\bat\com.android.systemui
-if /i "%choice%"=="8" tools\bat\com.lewa.birdview
-if /i "%choice%"=="9" tools\bat\com.lewa.launcher5
-if /i "%choice%"=="10" tools\bat\com.android.settings
-if /i "%choice%"=="11" goto make_*.lwt
-if /i "%choice%"=="12" tools\bat\help
-if /i "%choice%"=="13" goto adb
+if /i "%choice%"=="2" tools\bat\theme_inf_w
+if /i "%choice%"=="3" tools\bat\icons
+if /i "%choice%"=="4" tools\bat\lockscreen
+if /i "%choice%"=="5" tools\bat\framework-res
+if /i "%choice%"=="6" tools\bat\lewa-res
+if /i "%choice%"=="7" tools\bat\com.lewa.PIM
+if /i "%choice%"=="8" tools\bat\com.android.systemui
+if /i "%choice%"=="9" tools\bat\com.lewa.birdview
+if /i "%choice%"=="10" tools\bat\com.lewa.launcher5
+if /i "%choice%"=="11" tools\bat\com.android.settings
+if /i "%choice%"=="12" tools\bat\advance
+if /i "%choice%"=="13" goto make_*.lwt
+if /i "%choice%"=="14" tools\bat\help
+if /i "%choice%"=="15" goto adb
 echo 选择无效，请重新输入
 ping 127.0.0.1 -n 2 >NUL
 echo.
@@ -62,19 +71,20 @@ goto CHO
 cls
 @echo ********************************************************
 @echo.
-@echo                    LEWA主题制作[移植]助手
+@echo               LEWA主题制作[移植]助手%version%
 @echo.
 @echo.
 @echo ********************************************************
+echo --------------------------------------------------------
 echo.  [选择序号进行操作]
 echo --------------------------------------------------------
 echo   1.准备移植miui主题				
-echo   2.解包修改乐蛙主题		
+echo   2.解包修改乐蛙主题
 echo   3.返回主菜单		
 echo --------------------------------------------------------
 echo.                            %date% %time%
 set choice=
-set /p choice= 选择你要进行的操作:
+set /p choice= 选择[0-3]操作:
 IF NOT "%choice%"=="" SET choice=%choice:~0,1%
 if /i "%choice%"=="1" goto make_tmp1
 if /i "%choice%"=="2" goto make_tmp2
@@ -90,6 +100,7 @@ goto make_tmp
 ::判断mtz,存在则执行备份旧项目
 if exist *.mtz (if exist theme_done (md %folder%
 move "theme_done" %folder%)
+
 ::判断lewa_tmp
 if exist lewa_tmp (move "lewa_tmp" %folder%)
 ::判断lewa_tmp
@@ -110,16 +121,18 @@ goto make_tmp
 CLS
 @echo ********************************************************
 @echo.
-@echo                    LEWA主题制作[移植]助手
+@echo               LEWA主题制作[移植]助手%version%
 @echo.
-@echo.
+@echo.                                  
 @echo ********************************************************
-echo.
-echo.你可以选择如下主miui主题
-echo.
+echo --------------------------------------------------------
+echo.你可以选择如下主miui主题[选择序号进行操作]
+echo --------------------------------------------------------
 ::判断根目录mtz文件并列表
 set y=0
 for %%i in (*mtz) do (set /a y+=1 &&set mtz!y!=%%i &&set mtzx=%%~ni&&echo. !y! — !mtzx!.mtz&&echo.)
+echo --------------------------------------------------------
+echo.                            %date% %time%
 set /p a=请选择主题编号(0返回主菜单):
 if "%a%"=="0" goto CHO
 set b=mtz!a!
@@ -167,6 +180,20 @@ copy miui_tmp\com.tencent.mm theme_done
 copy miui_tmp\com.tencent.mobileqq theme_done
 copy tools\description.xml theme_done
 copy miui_tmp\lockscreen theme_done
+echo.
+echo 解包完毕，请修改主题信息
+echo.
+echo 请修改主题名称（中），修改完请关闭记事本，按任意键继续
+pause>nul
+call tools\theme_inf\theme_name_z.txt
+echo 请修改主题名称（英），修改完请关闭记事本，按任意键继续
+pause>nul
+call tools\theme_inf\theme_name_e.txt
+echo 请修改作者名字，修改完请关闭记事本，按任意键返回主菜单
+call tools\theme_inf\theme_author.txt
+pause>nul
+call tools\bat\theme_inf_r.bat
+
 :del *.mtz
 goto CHO
 
@@ -197,22 +224,25 @@ goto make_tmp
 CLS
 @echo ********************************************************
 @echo.
-@echo                    LEWA主题制作[移植]助手
+@echo               LEWA主题制作[移植]助手%version%
 @echo.
-@echo.
+@echo.                                  
 @echo ********************************************************
-echo.
-echo.你可以选择如下主lewa主题
-echo.
+echo --------------------------------------------------------
+echo.你可以选择如下主lewa主题[选择序号进行操作]
+echo --------------------------------------------------------
 set y=0
 ::判断根目录lwt文件并列表
 for %%i in (*lwt) do (set /a y+=1 &&set lwt!y!=%%i &&set lwtx=%%~ni&&echo. !y! — !lwtx!.lwt&&echo.)
+echo --------------------------------------------------------
+echo.                            %date% %time%
 set /p a=请选择主题编号(0返回主菜单):
 if "%a%"=="0" goto CHO
 set b=lwt!a!
 for %%i in (%b%) do (@echo 创建theme_done文件夹
 tools\7z x "!%%i!"  -otheme_done\ )
 tools\7z x theme_done\icons -olewa_tmp\icons
+tools\7z x theme_done\com.lewa.birdview -olewa_tmp\com.lewa.birdview
 tools\7z x theme_done\com.android.settings -olewa_tmp\com.android.settings
 tools\7z x theme_done\com.android.systemui  -olewa_tmp\com.android.systemui
 tools\7z x theme_done\com.lewa.launcher5 -olewa_tmp\com.lewa.launcher5
@@ -230,9 +260,9 @@ goto CHO
 
 :make_*.lwt
 cls
-if exist lewa.lwt (del lewa.lwt )
-tools\7z a lewa.zip .\theme_done\*
-ren lewa.zip lewa.lwt
+if exist %theme_name_e%.lwt (del %theme_name_e%.lwt )
+tools\7z a %theme_name_e%.zip .\theme_done\*
+ren %theme_name_e%.zip %theme_name_e%.lwt
 goto CHO
 
 
@@ -271,23 +301,24 @@ ping 127.0.0.1 -n 2 >NUL
 cls
 @echo ********************************************************
 @echo.
-@echo                    LEWA主题制作[移植]助手
+@echo               LEWA主题制作[移植]助手%version%
 @echo.
-@echo.
+@echo.                                  
 @echo ********************************************************
-echo.
-echo.你可以选择如下主题进行推送
-echo.
+echo --------------------------------------------------------
+echo.你可以选择如下主题进行推送[选择序号进行操作]
+echo --------------------------------------------------------
 ::判断根目录lwt文件并列表
 set y=0
 for %%i in (*lwt) do (set /a y+=1 &&set lwt!y!=%%i &&set lwtx=%%~ni&&echo. !y! — !lwtx!.lwt&&echo.)
+echo --------------------------------------------------------
+echo.                            %date% %time%
 set /p a=请选择主题编号(0返回主菜单):
 if "%a%"=="0" goto CHO
 set b=lwt!a!
-for %%i in (%b%) do (
-tools\adb push !%%i! /sdcard/LEWA/theme/lwt
-echo 推送完成，即将返回主界面
+for %%i in (%b%) do (tools\adb push !%%i! /sdcard/LEWA/theme/lwt
+echo 推送完成，任意键返回主菜单
 ping 127.0.0.1 -n 2 >NUL
-pause
+pause>NUL
 goto CHO
 )

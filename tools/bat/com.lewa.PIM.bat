@@ -6,18 +6,21 @@ rem ************************************************************
 CLS
 @echo ********************************************************
 @echo.
-@echo                    LEWA主题制作[移植]助手
+@echo               LEWA主题制作[移植]助手%version%
 @echo.
-@echo.
+@echo.                                  
 @echo ********************************************************
+echo --------------------------------------------------------
+echo.  [选择序号进行操作]
 echo --------------------------------------------------------
 echo   1.com.lewa.PIM移植
 echo   2.com.lewa.PIM解包
 echo   3.com.lewa.PIM打包
 echo   4.返回主菜单
 echo --------------------------------------------------------
+echo.                            %date% %time%
 set choice=
-set /p choice= 选择你要进行的操作:
+set /p choice= 选择[0-4]操作:
 IF NOT "%choice%"=="" SET choice=%choice:~0,1%
 if /i "%choice%"=="1" goto com.lewa.PIM_yizhi
 if /i "%choice%"=="2" goto com.lewa.PIM_jiebao

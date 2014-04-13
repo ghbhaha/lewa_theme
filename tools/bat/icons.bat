@@ -6,18 +6,21 @@ rem ************************************************************
 CLS
 @echo ********************************************************
 @echo.
-@echo                    LEWA主题制作[移植]助手
+@echo               LEWA主题制作[移植]助手%version%
 @echo.
-@echo.
+@echo.                                  
 @echo ********************************************************
+echo --------------------------------------------------------
+echo.  [选择序号进行操作]
 echo --------------------------------------------------------
 echo   1.icons移植
 echo   2.icons解包
 echo   3.icons打包
 echo   4.返回主菜单
 echo --------------------------------------------------------
+echo.                            %date% %time%
 set choice=
-set /p choice= 选择你要进行的操作:
+set /p choice= 选择[0-4]操作:
 IF NOT "%choice%"=="" SET choice=%choice:~0,1%
 if /i "%choice%"=="1" goto icons_yizhi
 if /i "%choice%"=="2" goto icons_jiebao
@@ -104,6 +107,10 @@ ren com.miui.videoplayer.png com.lewa.video.png
 ren com.miui.video.png com.lewa.video.png
 ren com.android.calendar.png com.lewa.calendar.png
 ren com.android.mms.png com.lewa.messages.png
+ren icon_background.png icon_background.png.bak
+ren icon_pattern.png icon_background.png
+
+
 cd ..
 xcopy  /e/I/h/r/y/s "drawable-xhdpi" .
 rd /s /q drawable-hdpi

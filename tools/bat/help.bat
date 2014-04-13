@@ -8,14 +8,20 @@ echo.
 echo 更新说明
 echo.
 echo 2014.3.18
+echo.1增加高级
+echo.
+echo.
+echo.
+echo 2014.3.18
 echo 1.添加tools\资料(制作主题的工具及参考资料)
 echo.
 echo 2014.3.17
 echo LEWA主题制作[移植]助手V2.1
-echo 1.增加目录的主题判断，支持多个主题的选择
+echo 1.优化adb的连接
 echo 2.增加旧项目的备份功能，取消清空原项目
-echo 3.优化adb的连接
+echo 3.增加目录的主题判断，支持多个主题的选择
 echo 4.修复com.android.systemui.bat中的路径错误问题
+echo 5.补充文件夹图标的移植，修改省电管理图标的移植方式为复制金山电池卫士
 echo.
 echo 2014.3.14 
 echo LEWA主题制作[移植]助手V2.0Beta
